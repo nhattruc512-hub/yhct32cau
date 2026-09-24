@@ -1,0 +1,981 @@
+<!DOCTYPE html>
+<html lang="vi"><head>
+  <meta name="theme-color" content="#0a2e7a">
+  <link rel="icon" href="favicon.png" type="image/png">
+  <link rel="icon" href="favicon-dtu.svg" type="image/svg+xml">
+  <link rel="alternate icon" href="favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>31 câu kiểm tra Y học cổ truyền</title>
+<style>
+:root{--bg:#f3f7fb;--panel:#fff;--ink:#0f172a;--muted:#64748b;--line:#e2e8f0;--blue:#2563eb;--green:#16a34a;--red:#ef4444;--yellow:#fef3c7;--soft:#f8fafc;--violet:#7c3aed;}
+*{box-sizing:border-box} body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:linear-gradient(135deg,#f8fafc,#edf5ff);color:var(--ink)}
+.app{display:grid;grid-template-columns:300px minmax(0,1fr);min-height:100vh}.side{background:rgba(255,255,255,.88);border-right:1px solid var(--line);padding:14px 18px 22px;position:sticky;top:0;height:100vh;overflow:auto}.logo{display:flex;gap:12px;align-items:center;margin-bottom:16px}.mark{width:50px;height:50px;border-radius:16px;background:linear-gradient(135deg,#2563eb,#22c55e);color:#fff;display:grid;place-items:center;font-weight:900}.title{font-weight:900;font-size:22px;line-height:1.05}.subtitle{color:var(--muted);font-size:13px;margin-top:5px}.stats{background:#fff;border:1px solid var(--line);border-radius:20px;padding:14px;margin:18px 0;box-shadow:0 10px 28px rgba(15,23,42,.06)}.statsgrid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.stat{background:#f8fafc;border:1px solid #e5e7eb;border-radius:14px;padding:12px}.num{font-size:26px;font-weight:900}.cap{font-size:12px;color:var(--muted);margin-top:4px}.progress{height:10px;border-radius:99px;background:#eaf0f7;overflow:hidden;margin-top:12px}.progress span{display:block;height:100%;background:linear-gradient(90deg,#2563eb,#22c55e);width:0}.labelSmall{font-size:12px;color:#64748b;margin-top:9px}.control{margin:14px 0}.control label{display:block;font-size:12px;font-weight:800;color:#475569;margin-bottom:7px}select,input{width:100%;border:1px solid var(--line);border-radius:13px;background:#fff;padding:12px 13px;font:inherit;outline:none}select:focus,input:focus{border-color:#93c5fd;box-shadow:0 0 0 4px #dbeafe}.quick{display:flex;flex-wrap:wrap;gap:7px;margin:10px 0}.mini,.ghost,.starbtn,.success,.danger{border:1px solid var(--line);background:#fff;border-radius:13px;padding:10px 12px;font-weight:800;cursor:pointer;transition:.15s}.mini:hover,.ghost:hover,.starbtn:hover{transform:translateY(-1px);box-shadow:0 8px 18px rgba(15,23,42,.08)}.mini.active{background:#2563eb;color:white}.mini.warn{background:#fff7ed}.success{background:#dcfce7;border-color:#86efac;color:#166534}.danger{background:#fee2e2;border-color:#fecaca;color:#991b1b}.navBlock{margin-top:16px}.examBlock{padding-top:6px;border-top:1px solid var(--line)}.qgrid{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-top:10px}.qbtn{height:42px;border:1px solid var(--line);border-radius:12px;background:#fff;font-weight:900;cursor:pointer;position:relative}.qbtn.active{background:#2563eb;color:#fff;border-color:#2563eb}.qbtn.good{background:#dcfce7;border-color:#86efac;color:#166534}.qbtn.bad{background:#fee2e2;border-color:#fecaca;color:#991b1b}.qbtn.star:after{content:'★';position:absolute;right:3px;top:1px;color:#f59e0b;font-size:10px}.qbtn.showAns{display:flex;align-items:center;justify-content:space-between;gap:4px;padding:0 8px}.qbtn.showAns b{font-size:15px;font-weight:950}.qbtn.showAns.active{box-shadow:0 0 0 2px #2563eb inset}.qbtn.shortmark{border-style:dashed}.main{padding:22px 32px;min-width:0}.topbar{display:flex;align-items:flex-start;justify-content:space-between;gap:18px;margin-bottom:18px;background:rgba(255,255,255,.72);border:1px solid var(--line);border-radius:22px;padding:14px 16px;box-shadow:0 14px 34px rgba(15,23,42,.06)}.topLeft{display:flex;flex-direction:column;gap:8px;min-width:260px}.mainLogo{margin-bottom:0}.mainLogo .mark{width:48px;height:48px}.mainLogo .title{font-size:24px}.chips{display:flex;gap:8px;flex-wrap:wrap}.chip,.tag{border:1px solid var(--line);background:#fff;border-radius:999px;padding:9px 13px;font-weight:800;color:#334155;box-shadow:0 4px 14px rgba(15,23,42,.04)}#timerChip{display:none;background:#0f172a;color:#fff}.topActions{display:flex;gap:8px;flex-wrap:wrap}.btn{border:0;background:#fff;border-radius:12px;padding:12px 14px;font-weight:900;cursor:pointer;box-shadow:0 8px 22px rgba(15,23,42,.06)}.btn.primary{background:#0f172a;color:#fff}.btn.danger{background:#fff1f2;color:#e11d48}.btn.starClear{background:#facc15;color:#713f12;border:1px solid #eab308;box-shadow:0 0 0 2px #fef3c7 inset}.btn.starClear:hover{background:#eab308;color:#422006}.answerToggle.on{background:#22c55e;color:#fff;border:1px solid #16a34a;box-shadow:0 0 0 2px #bbf7d0 inset}.btn.answerToggle.on:hover{background:#16a34a;color:#fff}.answerMap{border:1px solid #86efac;background:#f0fdf4;border-radius:20px;padding:16px 18px;margin:0 0 22px;box-shadow:0 10px 26px rgba(22,163,74,.10)}.answerMapHead{display:flex;justify-content:space-between;gap:12px;align-items:flex-start;flex-wrap:wrap;margin-bottom:12px;color:#14532d}.answerMapHead b{font-size:18px}.answerMapHead span{font-size:13px;color:#166534;font-weight:800}.answerMapGrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(88px,1fr));gap:8px;max-height:330px;overflow:auto;padding-right:4px}.ansChip{border:1px solid #86efac;background:#dcfce7;color:#14532d;border-radius:12px;padding:8px 9px;font-weight:900;cursor:pointer;display:flex;justify-content:space-between;gap:6px;align-items:center}.ansChip:hover{background:#bbf7d0;transform:translateY(-1px)}.ansChip span{font-size:12px}.ansChip b{font-size:16px}.examBox{background:#fff;border:1px solid var(--line);border-left:5px solid #2563eb;border-radius:16px;padding:13px 16px;margin:12px 0;box-shadow:0 8px 22px rgba(15,23,42,.05)}.card{background:#fff;border:1px solid var(--line);border-radius:22px;padding:28px;box-shadow:0 18px 45px rgba(15,23,42,.08);max-width:none;width:100%}.head{display:flex;justify-content:space-between;gap:12px;border-bottom:1px solid var(--line);padding-bottom:18px;margin-bottom:20px}.qid{font-size:22px;color:#2563eb;font-weight:950}.muted{color:var(--muted);font-size:13px;margin-top:5px}.badges{display:flex;gap:8px;flex-wrap:wrap;align-items:flex-start;justify-content:flex-end}.tag{font-size:12px;padding:7px 10px}.shorttag{background:#f5f3ff;color:#6d28d9}.supp{background:#fff7ed;color:#9a3412}.qtext{font-size:22px;line-height:1.35;font-weight:900;margin:16px 0 6px}.vi{font-size:18px;color:#475569;margin-bottom:14px}.imageNote{background:#f8fafc;border:1px solid var(--line);border-radius:14px;padding:12px 14px;font-weight:800;color:#334155;margin:12px 0}.media{display:flex;flex-direction:column;gap:12px;align-items:flex-start;margin:12px 0 18px}.media img{max-width:min(840px,100%);border:1px solid #dbe3ee;border-radius:12px;background:#fff;cursor:zoom-in;box-shadow:0 10px 25px rgba(15,23,42,.08)}.options{display:grid;gap:12px;margin-top:16px}.option{display:flex;gap:14px;align-items:flex-start;text-align:left;border:1px solid var(--line);border-radius:16px;background:#fff;padding:15px 16px;font-size:16px;cursor:pointer}.option:hover{border-color:#93c5fd;background:#f8fbff}.option span{flex:0 0 auto;width:34px;height:34px;border-radius:11px;display:grid;place-items:center;background:#f1f5f9;font-weight:950}.option b{font-weight:650;line-height:1.35}.option.selected{border-color:#2563eb;background:#eff6ff}.option.correct{border-color:#22c55e;background:#dcfce7}.option.wrong{border-color:#ef4444;background:#fee2e2}.feedback,.answerBox{border-radius:18px;padding:17px 18px;margin-top:18px;border:1px solid var(--line)}.feedback.good{background:#f0fdf4;border-color:#bbf7d0;color:#14532d}.feedback.bad{background:#fff1f2;border-color:#fecdd3;color:#7f1d1d}.feedback.neutral{background:#f8fafc}.explain{color:#0369a1;margin-top:9px;font-size:16px;line-height:1.55}.source{margin-top:10px;color:#94a3b8;font-size:12px}.answerBox{background:linear-gradient(180deg,#f8fbff,#fff);border-color:#bfdbfe}.answerBox.compact .explain,.answerBox.compact .answerVi{display:none}.label{color:#1d4ed8;text-transform:uppercase;letter-spacing:.06em;font-weight:950;font-size:12px;margin-bottom:8px}.answerMain{font-size:20px;font-weight:900;line-height:1.45}.answerVi{margin-top:10px;color:#475569;font-size:17px;line-height:1.5}.actions{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-top:22px}.empty{padding:30px;text-align:center;color:#64748b}.modal{position:fixed;inset:0;background:rgba(15,23,42,.84);display:none;align-items:center;justify-content:center;padding:28px;z-index:50}.modal.show{display:flex}.modal img{max-width:96vw;max-height:92vh;border-radius:12px;background:#fff}.closeHint{position:fixed;bottom:18px;color:#fff;background:rgba(255,255,255,.16);padding:8px 12px;border-radius:999px}.footerNote{font-size:12px;color:#64748b;line-height:1.5;margin-top:18px}.kbd{display:inline-block;border:1px solid #cbd5e1;border-radius:6px;background:#fff;padding:1px 6px;font-size:11px;color:#64748b}@media(max-width:980px){.app{grid-template-columns:1fr}.side{position:relative;height:auto}.main{padding:20px}.topbar{align-items:flex-start;flex-direction:column}.card{padding:20px}.qtext{font-size:20px}.vi{font-size:16px}.qgrid{grid-template-columns:repeat(8,1fr)}}
+
+@media (max-width:900px){.topbar{flex-direction:column}.topActions{width:100%;justify-content:flex-start}.topLeft{min-width:0}.mainLogo .title{font-size:22px}}
+
+/* source switcher patch */
+.sourceNav{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-top:2px}
+.sourceLabel{font-size:12px;color:#64748b;font-weight:900;margin-right:2px}
+.sourceLink{display:inline-flex;align-items:center;justify-content:center;text-decoration:none;border:1px solid var(--line);background:#fff;border-radius:999px;padding:9px 13px;font-weight:900;color:#334155;box-shadow:0 4px 14px rgba(15,23,42,.04);transition:.15s}
+.sourceLink:hover{transform:translateY(-1px);box-shadow:0 8px 18px rgba(15,23,42,.08);border-color:#93c5fd;background:#f8fbff}
+.sourceLink.active{background:#2563eb;color:#fff;border-color:#2563eb;pointer-events:none}
+.sourceLink.active::before{content:'✓ ';font-weight:950}
+@media(max-width:900px){.sourceNav{width:100%}.sourceLink{padding:8px 11px}}
+
+
+
+/* keyword note / highlight patch */
+.qTitleRow{display:flex;align-items:flex-start;gap:12px;margin:16px 0 6px}.qTitleRow .qtext{flex:1;margin:0}.noteEditBtn{flex:0 0 auto;border:1px solid #fde68a;background:#fffbeb;color:#92400e;border-radius:13px;padding:10px 12px;font-weight:950;cursor:pointer;box-shadow:0 6px 16px rgba(146,64,14,.08)}.noteEditBtn:hover{transform:translateY(-1px);background:#fef3c7}.noteEditBtn.on{background:#f59e0b;color:#fff;border-color:#f59e0b}.noteField{border-radius:12px;padding:6px 8px;margin-left:-8px}.noteMode .noteField{outline:2px dashed #f59e0b;background:#fffbeb}.noteToolbar{border:1px solid #fde68a;background:#fffbeb;border-radius:16px;padding:12px;margin:10px 0 14px;display:flex;flex-wrap:wrap;gap:8px;align-items:center}.noteToolbar .hint{font-weight:900;color:#92400e;margin-right:4px}.hlBtn{border:1px solid #e5e7eb;border-radius:999px;padding:8px 11px;font-weight:950;cursor:pointer;background:#fff}.hlBtn.yellow{background:#fef08a}.hlBtn.green{background:#bbf7d0}.hlBtn.blue{background:#bfdbfe}.hlBtn.red{background:#fecaca}.hlBtn.purple{background:#ddd6fe}.hlClear{border:1px solid #fecaca;background:#fee2e2;color:#991b1b;border-radius:999px;padding:8px 11px;font-weight:950;cursor:pointer}.noteMemo{width:100%;min-height:70px;resize:vertical;border:1px solid #fcd34d;background:#fff;border-radius:13px;padding:10px 12px;font:inherit}.noteMemoLabel{width:100%;font-size:12px;font-weight:950;color:#92400e;margin-top:2px}.hl-yellow{background:#fef08a;border-radius:5px;padding:0 2px}.hl-green{background:#bbf7d0;border-radius:5px;padding:0 2px}.hl-blue{background:#bfdbfe;border-radius:5px;padding:0 2px}.hl-red{background:#fecaca;border-radius:5px;padding:0 2px}.hl-purple{background:#ddd6fe;border-radius:5px;padding:0 2px}.memoBox{border:1px solid #fde68a;background:#fffbeb;border-radius:14px;padding:10px 12px;margin:8px 0 12px;color:#78350f}.memoBox b{color:#92400e}
+
+
+
+/* PATCH 2026-05-18: tô keyword rõ hơn + cho tô cả 4 đáp án */
+.option .noteField,
+.optionNoteField{
+  margin-left:0 !important;
+  padding:1px 4px !important;
+  border-radius:6px !important;
+  display:inline !important;
+  user-select:text !important;
+  -webkit-user-select:text !important;
+}
+.noteMode .option{
+  cursor:text !important;
+  user-select:text !important;
+  -webkit-user-select:text !important;
+}
+.noteMode .option *{
+  user-select:text !important;
+  -webkit-user-select:text !important;
+}
+.noteMode .option .noteField,
+.noteMode .optionNoteField{
+  outline:2px dashed #f59e0b !important;
+  background:#fffbeb !important;
+}
+.hl-yellow,.hl-green,.hl-blue,.hl-red,.hl-purple{
+  color:#111827 !important;
+  font-weight:950 !important;
+  border-radius:6px !important;
+  padding:1px 4px !important;
+  box-decoration-break:clone;
+  -webkit-box-decoration-break:clone;
+}
+.hl-yellow{background:#fde047 !important;border:1px solid rgba(161,98,7,.35) !important;}
+.hl-green{background:#86efac !important;border:1px solid rgba(22,101,52,.35) !important;}
+.hl-blue{background:#93c5fd !important;border:1px solid rgba(30,64,175,.35) !important;}
+.hl-red{background:#fca5a5 !important;border:1px solid rgba(153,27,27,.35) !important;}
+.hl-purple{background:#c4b5fd !important;border:1px solid rgba(91,33,182,.35) !important;}
+@media (prefers-color-scheme: dark){
+  .hl-yellow{color:#111827 !important;background:#fde047 !important;text-shadow:none !important;box-shadow:0 0 0 1px rgba(250,204,21,.45),0 0 14px rgba(250,204,21,.25) !important;}
+  .hl-green{color:#052e16 !important;background:#86efac !important;text-shadow:none !important;box-shadow:0 0 0 1px rgba(134,239,172,.35),0 0 12px rgba(134,239,172,.2) !important;}
+  .hl-blue{color:#082f49 !important;background:#93c5fd !important;text-shadow:none !important;box-shadow:0 0 0 1px rgba(147,197,253,.35),0 0 12px rgba(147,197,253,.2) !important;}
+  .hl-red{color:#450a0a !important;background:#fca5a5 !important;text-shadow:none !important;box-shadow:0 0 0 1px rgba(252,165,165,.35),0 0 12px rgba(252,165,165,.2) !important;}
+  .hl-purple{color:#2e1065 !important;background:#c4b5fd !important;text-shadow:none !important;box-shadow:0 0 0 1px rgba(196,181,253,.35),0 0 12px rgba(196,181,253,.2) !important;}
+}
+body.dark .hl-yellow,[data-theme="dark"] .hl-yellow{color:#111827 !important;background:#fde047 !important;box-shadow:0 0 0 1px rgba(250,204,21,.45),0 0 14px rgba(250,204,21,.25) !important;}
+body.dark .hl-green,[data-theme="dark"] .hl-green{color:#052e16 !important;background:#86efac !important;}
+body.dark .hl-blue,[data-theme="dark"] .hl-blue{color:#082f49 !important;background:#93c5fd !important;}
+body.dark .hl-red,[data-theme="dark"] .hl-red{color:#450a0a !important;background:#fca5a5 !important;}
+body.dark .hl-purple,[data-theme="dark"] .hl-purple{color:#2e1065 !important;background:#c4b5fd !important;}
+
+
+
+/* PATCH 2026-05-18: màu highlight dịu mắt, dễ đọc trên nền tối */
+.hl-yellow,
+.hl-green,
+.hl-blue,
+.hl-red,
+.hl-purple{
+  border-radius:10px !important;
+  padding:2px 8px !important;
+  font-weight:900 !important;
+  text-shadow:none !important;
+  border:1px solid rgba(255,255,255,.16) !important;
+  box-shadow:0 1px 0 rgba(255,255,255,.16) inset, 0 2px 8px rgba(0,0,0,.22) !important;
+}
+.hl-yellow{background:#FCD34D !important;color:#111827 !important;}
+.hl-green{background:#6EE7B7 !important;color:#111827 !important;}
+.hl-blue{background:#60A5FA !important;color:#111827 !important;}
+.hl-red{background:#FCA5A5 !important;color:#111827 !important;}
+.hl-purple{background:#A78BFA !important;color:#111827 !important;}
+
+body.dark .hl-yellow,
+body.dark .hl-green,
+body.dark .hl-blue,
+body.dark .hl-red,
+body.dark .hl-purple,
+[data-theme="dark"] .hl-yellow,
+[data-theme="dark"] .hl-green,
+[data-theme="dark"] .hl-blue,
+[data-theme="dark"] .hl-red,
+[data-theme="dark"] .hl-purple{
+  color:#111827 !important;
+  text-shadow:none !important;
+  filter:saturate(.92) brightness(.98) !important;
+}
+
+/* màu nút chọn highlight cũng dịu hơn */
+.hlBtn.yellow{background:#FCD34D !important;color:#111827 !important;}
+.hlBtn.green{background:#6EE7B7 !important;color:#111827 !important;}
+.hlBtn.blue{background:#60A5FA !important;color:#111827 !important;}
+.hlBtn.red{background:#FCA5A5 !important;color:#111827 !important;}
+.hlBtn.purple{background:#A78BFA !important;color:#111827 !important;}
+
+
+
+/* ===== FINAL SOFT KEYWORD COLORS - dịu mắt, dễ đọc trên nền tối ===== */
+.hl-yellow,
+.hl-green,
+.hl-blue,
+.hl-red,
+.hl-purple{
+  border-radius:10px !important;
+  padding:2px 8px !important;
+  font-weight:900 !important;
+  text-shadow:none !important;
+  box-decoration-break:clone !important;
+  -webkit-box-decoration-break:clone !important;
+  border:1px solid rgba(255,255,255,.16) !important;
+  box-shadow:0 1px 6px rgba(0,0,0,.18) !important;
+}
+.hl-yellow,
+.hl-yellow *{background:#FCD34D !important;color:#111827 !important;}
+.hl-green,
+.hl-green *{background:#6EE7B7 !important;color:#111827 !important;}
+.hl-blue,
+.hl-blue *{background:#60A5FA !important;color:#111827 !important;}
+.hl-red,
+.hl-red *{background:#FCA5A5 !important;color:#111827 !important;}
+.hl-purple,
+.hl-purple *{background:#A78BFA !important;color:#111827 !important;}
+
+body.dark .hl-yellow,
+[data-theme="dark"] .hl-yellow,
+.dark .hl-yellow,
+.theme-dark .hl-yellow{background:#FCD34D !important;color:#111827 !important;}
+body.dark .hl-green,
+[data-theme="dark"] .hl-green,
+.dark .hl-green,
+.theme-dark .hl-green{background:#6EE7B7 !important;color:#111827 !important;}
+body.dark .hl-blue,
+[data-theme="dark"] .hl-blue,
+.dark .hl-blue,
+.theme-dark .hl-blue{background:#60A5FA !important;color:#111827 !important;}
+body.dark .hl-red,
+[data-theme="dark"] .hl-red,
+.dark .hl-red,
+.theme-dark .hl-red{background:#FCA5A5 !important;color:#111827 !important;}
+body.dark .hl-purple,
+[data-theme="dark"] .hl-purple,
+.dark .hl-purple,
+.theme-dark .hl-purple{background:#A78BFA !important;color:#111827 !important;}
+
+.hlBtn.yellow{background:#FCD34D !important;color:#111827 !important;border-color:rgba(161,98,7,.25) !important;}
+.hlBtn.green{background:#6EE7B7 !important;color:#111827 !important;border-color:rgba(6,95,70,.25) !important;}
+.hlBtn.blue{background:#60A5FA !important;color:#111827 !important;border-color:rgba(30,64,175,.25) !important;}
+.hlBtn.red{background:#FCA5A5 !important;color:#111827 !important;border-color:rgba(153,27,27,.25) !important;}
+.hlBtn.purple{background:#A78BFA !important;color:#111827 !important;border-color:rgba(91,33,182,.25) !important;}
+/* ===== END FINAL SOFT KEYWORD COLORS ===== */
+
+
+
+/* ===== COMPACT LAYOUT PATCH: hiện câu hỏi/ảnh/đáp án nhiều hơn, bỏ phần header rườm rà ===== */
+html, body{scroll-behavior:auto !important;}
+.main{padding:12px 22px !important;}
+.topbar{
+  padding:8px 12px !important;
+  margin-bottom:10px !important;
+  border-radius:16px !important;
+  min-height:0 !important;
+  align-items:center !important;
+  gap:10px !important;
+}
+.topLeft{gap:5px !important;min-width:0 !important;}
+.mainLogo{gap:8px !important;margin:0 !important;align-items:center !important;}
+.mainLogo .mark{width:34px !important;height:34px !important;border-radius:11px !important;font-size:13px !important;}
+.mainLogo .title{font-size:18px !important;line-height:1.05 !important;white-space:nowrap !important;}
+.mainLogo .title br{display:none !important;}
+.subtitle,.chips{display:none !important;}
+.sourceNav{margin-top:0 !important;gap:5px !important;align-items:center !important;}
+.sourceLabel{display:none !important;}
+.sourceLink{padding:6px 10px !important;font-size:12px !important;border-radius:999px !important;line-height:1 !important;box-shadow:none !important;}
+.topActions{gap:5px !important;align-items:center !important;}
+.topActions .btn{padding:7px 9px !important;font-size:11px !important;border-radius:9px !important;box-shadow:none !important;}
+#clearStarsBtn{margin-left:10px !important;}
+.card{padding:20px 22px !important;border-radius:18px !important;}
+.head{padding-bottom:10px !important;margin-bottom:12px !important;}
+.qid{font-size:20px !important;}
+.muted{font-size:12px !important;margin-top:3px !important;}
+.badges .tag{padding:5px 8px !important;font-size:11px !important;}
+.qTitleRow{margin:10px 0 4px !important;gap:8px !important;}
+.qtext{font-size:21px !important;line-height:1.28 !important;margin:10px 0 4px !important;max-width:100% !important;overflow:visible !important;white-space:normal !important;}
+.vi{font-size:16px !important;line-height:1.35 !important;margin-bottom:8px !important;}
+.noteEditBtn{padding:8px 10px !important;border-radius:10px !important;font-size:12px !important;}
+/* dòng thông báo ảnh đang chiếm chỗ + dễ bị cắt, bỏ luôn */
+.imageNote{display:none !important;}
+.media{margin:8px 0 12px !important;gap:8px !important;}
+.media img{max-width:min(720px,100%) !important;max-height:min(42vh,420px) !important;object-fit:contain !important;}
+.options{gap:9px !important;margin-top:10px !important;}
+.option{padding:12px 14px !important;border-radius:13px !important;font-size:15px !important;min-height:0 !important;}
+.option span{width:30px !important;height:30px !important;border-radius:9px !important;}
+.feedback,.answerBox{padding:13px 15px !important;margin-top:12px !important;border-radius:14px !important;}
+.explain{margin-top:7px !important;font-size:15px !important;line-height:1.42 !important;}
+.actions{margin-top:14px !important;gap:8px !important;}
+.actions button,.actions .ghost,.actions .starbtn,.actions .success,.actions .danger{padding:8px 10px !important;border-radius:10px !important;font-size:12px !important;}
+@media(max-width:980px){
+  .main{padding:10px 12px !important;}
+  .topbar{align-items:flex-start !important;}
+  .mainLogo .title{font-size:16px !important;white-space:normal !important;}
+  .sourceLink{padding:6px 8px !important;}
+  .card{padding:16px !important;}
+  .qtext{font-size:19px !important;}
+  .media img{max-height:38vh !important;}
+}
+/* ===== END COMPACT LAYOUT PATCH ===== */
+
+.vi:empty{display:none!important}
+</style>
+<style>.--savior-overlay-transform-reset {
+  transform: none !important;
+}
+.--savior-overlay-z-index-top {
+  z-index: 2147483643 !important;
+}
+.--savior-overlay-position-relative {
+  position: relative;
+}
+.--savior-overlay-position-static {
+  position: static !important;
+}
+.--savior-overlay-overflow-hidden {
+  overflow: hidden !important;
+}
+.--savior-overlay-overflow-x-visible {
+  overflow-x: visible !important;
+}
+.--savior-overlay-overflow-y-visible {
+  overflow-y: visible !important;
+}
+.--savior-overlay-z-index-reset {
+  z-index: auto !important;
+}
+.--savior-overlay-display-none {
+  display: none !important;
+}
+.--savior-overlay-clearfix {
+  clear: both;
+}
+.--savior-overlay-reset-filter {
+  filter: none !important;
+  backdrop-filter: none !important;
+}
+.--savior-tooltip-host {
+  z-index: 9999;
+  position: absolute;
+  top: 0;
+}
+/*Override css styles for Twitch.tv*/
+main.--savior-overlay-z-index-reset {
+  z-index: auto !important;
+}
+.modal__backdrop.--savior-overlay-z-index-reset {
+  position: static !important;
+}
+main.--savior-overlay-z-index-top {
+  z-index: auto !important;
+}
+main.--savior-overlay-z-index-top .channel-root__player-container + div,
+main.--savior-overlay-z-index-top .video-player-hosting-ui__container + div {
+  opacity: 0.1;
+}
+/*Dirty hack for facebook big video page e.g: https://www.facebook.com/abc/videos/...*/
+.--savior-backdrop {
+  position: fixed !important;
+  z-index: 2147483642 !important;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw !important;
+  background-color: rgba(0,0,0,0.9);
+}
+.--savior-overlay-twitter-video-player {
+  position: fixed;
+  width: 80%;
+  height: 80%;
+  top: 10%;
+  left: 10%;
+}
+.--savior-overlay-z-index-reset [class*="DivSideNavContainer"],
+.--savior-overlay-z-index-reset [class*="DivHeaderContainer"],
+.--savior-overlay-z-index-reset [class*="DivBottomContainer"],
+.--savior-overlay-z-index-reset [class*="DivCategoryListWrapper"],
+.--savior-overlay-z-index-reset [data-testid="sidebarColumn"],
+.--savior-overlay-z-index-reset header[role="banner"],
+.--savior-overlay-z-index-reset [data-testid="cellInnerDiv"]:not(.--savior-overlay-z-index-reset),
+.--savior-overlay-z-index-reset [aria-label="Home timeline"]>div:first-child,
+.--savior-overlay-z-index-reset [aria-label="Home timeline"]>div:nth-child(3) {
+  z-index: -1 !important;
+}
+.--savior-overlay-z-index-reset [data-testid="cellInnerDiv"] .--savior-backdrop+div {
+  z-index: 2147483643 !important;
+}
+.--savior-overlay-z-index-reset [data-testid="primaryColumn"]>[aria-label="Home timeline"] {
+  z-index: 0 !important;
+}
+.--savior-overlay-z-index-reset#mtLayer,
+.--savior-overlay-z-index-reset.media-layer {
+  z-index: 3000 !important;
+}
+.--savior-overlay-position-relative [class*="SecBar_secBar_"],
+.--savior-overlay-position-relative .woo-box-flex [class*="Frame_top_"] {
+  z-index: 0 !important;
+}
+.--savior-overlay-position-relative .vue-recycle-scroller__item-view:not(.--savior-overlay-z-index-reset),
+.--savior-overlay-position-relative .woo-panel-main[class*="BackTop_main_"],
+.--savior-overlay-position-relative [class*="Main_side_"] {
+  z-index: -1 !important;
+}
+/* Fix conflict css with zingmp3 */
+.zm-video-modal.--savior-overlay-z-index-reset {
+  position: absolute;
+}
+/* Dirty hack for xvideos99 */
+#page #main.--savior-overlay-z-index-reset {
+  z-index: auto !important;
+}
+/* Overlay for ok.ru */
+#vp_w.--savior-overlay-z-index-reset.media-layer.media-layer__video {
+  overflow-y: hidden;
+  z-index: 2147483643 !important;
+}
+/* Fix missing controller for tv.naver.com */
+.--savior-overlay-z-index-top.rmc_controller,
+.--savior-overlay-z-index-top.rmc_setting_intro,
+.--savior-overlay-z-index-top.rmc_highlight,
+.--savior-overlay-z-index-top.rmc_control_settings {
+  z-index: 2147483644 !important;
+}
+/* Dirty hack for douyi.com */
+.swiper-wrapper.--savior-overlay-z-index-reset .swiper-slide:not(.swiper-slide-active),
+.swiper-wrapper.--savior-overlay-transform-reset .swiper-slide:not(.swiper-slide-active) {
+  display: none;
+}
+.videoWrap + div > div {
+  pointer-events: unset;
+}
+/* Dirty hack for fpt.ai */
+.mfp-wrap.--savior-overlay-z-index-top {
+  position: relative;
+}
+.mfp-wrap.--savior-overlay-z-index-top .mfp-close {
+  display: none;
+}
+.mfp-wrap.--savior-overlay-z-index-top .mfp-content {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+section.--savior-overlay-z-index-reset>main[role="main"].--savior-overlay-z-index-reset + nav {
+  z-index: -1 !important;
+}
+section.--savior-overlay-z-index-reset>main[role="main"].--savior-overlay-z-index-reset section.--savior-overlay-z-index-reset div.--savior-overlay-z-index-reset ~ div {
+  position: relative;
+}
+.watching-movie #video-player.--savior-overlay-z-index-top {
+  z-index: 2147483644 !important;
+}
+div[class^="tiktok"].--savior-overlay-z-index-reset {
+  z-index: 2147483644 !important;
+}
+.--savior-lightoff-fix section:not(:has([class*="--savior-overlay-"])),
+.--savior-lightoff-fix section.section_video ~ section {
+  z-index: -1;
+  position: relative;
+}
+.--savior-lightoff-fix header,
+.--savior-lightoff-fix footer,
+.--savior-lightoff-fix .top-header,
+.--savior-lightoff-fix .swiper-container,
+.--savior-lightoff-fix #to_top,
+.--savior-lightoff-fix #button-adblock {
+  z-index: -1 !important;
+}
+@-moz-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-o-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+</style></head>
+<body>
+<div class="app">
+  <aside class="side">
+    <div class="control navBlock"><label>Tất cả câu hỏi</label><div id="qgrid" class="qgrid"></div></div>
+    <div class="control examBlock"><label>Mini exam - chọn phút</label><div id="examBtns" class="quick"><button class="mini warn" data-min="1">1 phút</button><button class="mini warn" data-min="2">2 phút</button><button class="mini warn" data-min="3">3 phút</button><button class="mini warn" data-min="4">4 phút</button><button class="mini warn" data-min="5">5 phút</button><button class="mini warn" data-min="6">6 phút</button><button class="mini warn" data-min="7">7 phút</button><button class="mini warn" data-min="8">8 phút</button></div></div>
+    <div class="control"><label>Lọc câu</label><select id="filter"><option value="all">Tất cả câu</option><option value="mcq">Chỉ trắc nghiệm</option><option value="image">Câu có hình</option><option value="wrong">Ôn câu sai/chưa thuộc</option><option value="starred">Câu đã gắn sao</option><option value="learned">Đã đúng/đã thuộc</option><option value="supplement">Câu bổ sung</option></select></div>
+    <div class="control"><label>Chủ đề thông minh</label><select id="topic"><option value="all">Tất cả chủ đề</option></select></div>
+    <div class="control"><label>Tìm nhanh</label><input id="search" placeholder="tên thuốc, công năng, triệu chứng..."></div>
+    <div class="quick"><button class="mini" id="wrongQuick">Ôn câu sai</button><button class="mini" id="starQuick">⭐ Câu sao</button><button class="mini" id="imgQuick">Câu hình</button></div>
+    <div class="footerNote">Phím tắt: <span class="kbd">A</span> <span class="kbd">B</span> <span class="kbd">C</span> <span class="kbd">D</span>, <span class="kbd">←</span> <span class="kbd">→</span>. Xóa tiến độ vẫn giữ keyword/note. Xóa câu sao không xóa kết quả hoặc ghi chú. Câu đã gắn sao sẽ được né khi bấm Câu sau/Câu trước/Random.</div>
+    <div class="stats">
+      <div class="statsgrid">
+        <div class="stat"><div class="num" id="score">0</div><div class="cap">Đúng / đã thuộc</div></div>
+        <div class="stat"><div class="num" id="answered">0/31</div><div class="cap">Đã làm</div></div>
+        <div class="stat"><div class="num" id="percent">0%</div><div class="cap">Tỉ lệ</div></div>
+        <div class="stat"><div class="num" id="currentNum">1</div><div class="cap">Câu hiện tại</div></div>
+      </div>
+      <div class="progress"><span id="bar" style="width: 0%;"></span></div>
+      <div class="labelSmall" id="learnedSmall">Bộ 31 câu trắc nghiệm</div>
+    </div>
+  </aside>
+  <main class="main">
+    <div class="topbar">
+      <div class="topLeft">
+        <div class="logo mainLogo"><div class="mark">Y</div><div><div class="title">Y HỌC CỔ TRUYỀN</div><div class="subtitle">28 câu trắc nghiệm ôn 9+ • bám sát bài giảng</div></div></div>
+        <div class="chips"><span class="chip">📘 Y HỌC CỔ TRUYỀN</span><span class="chip">28 câu trắc nghiệm</span><span class="chip" id="imageChip">Có hình: 0</span><span class="chip" id="shortChip">100% trắc nghiệm</span><span class="chip" id="timerChip" style="display: none;">⏱ 00:00</span></div>
+      </div>
+      <div class="topActions"><button class="btn answerToggle" id="toggleAllCorrect" title="Hiện đáp án đúng màu xanh lá ngay trong menu câu hỏi">Bật đáp án đúng</button><button class="btn" id="shuffleBtn">Random câu</button><button class="btn" id="exportPdfBtn">Xuất PDF</button><button class="btn" id="exportWordBtn">Xuất Word</button><button class="btn danger" id="resetBtn">Xóa tiến độ</button><button class="btn starClear" id="clearStarsBtn">⭐ Xóa câu sao</button></div>
+    </div>
+    <div id="examStatus"></div>
+    <section id="quizCard" class="card"></section>
+  </main>
+</div>
+<div id="imgModal" class="modal"><img id="zoomImg" alt="Zoom ảnh"><div class="closeHint">Bấm nền hoặc ESC để đóng</div></div>
+<script id="question-data" type="application/json">[{"id": 1, "display": "1", "type": "mcq", "question": "Chỉ ra vị thuốc có tính hàn", "vi": "", "images": [], "options": [{"label": "A", "text": "Bạc hà"}, {"label": "B", "text": "Cẩu tích"}, {"label": "C", "text": "Huyền sâm"}, {"label": "D", "text": "Sinh khương"}], "correct": "C", "answer": "", "answerVi": "", "explanation": "", "source": "Bộ câu hỏi Y học cổ truyền", "topic": "YHCT", "isSupplement": false}, {"id": 2, "display": "2", "type": "mcq", "question": "Chỉ ra vị thuốc có tính ôn", "vi": "", "images": [], "options": [{"label": "A", "text": "Mạch môn"}, {"label": "B", "text": "Táo nhân"}, {"label": "C", "text": "Bạch chỉ"}, {"label": "D", "text": "Sài hồ"}], "correct": "C", "answer": "", "answerVi": "", "explanation": "", "source": "Bộ câu hỏi Y học cổ truyền", "topic": "YHCT", "isSupplement": false}, {"id": 3, "display": "3", "type": "mcq", "question": "Học thuyết chính vận dụng cho sự quy kinh thuốc cổ truyền", "vi": "", "images": [], "options": [{"label": "A", "text": "Thuyết âm dương"}, {"label": "B", "text": "Thuyết ngũ hành"}, {"label": "C", "text": "Thuyết tạng tượng"}, {"label": "D", "text": "Thuyết kinh lạc"}], "correct": "B", "answer": "", "answerVi": "", "explanation": "", "source": "Bộ câu hỏi Y học cổ truyền", "topic": "YHCT", "isSupplement": false}, {"id": 4, "display": "4", "type": "mcq", "question": "Chọn nhóm thuốc thuộc tân ôn giải biểu", "vi": "", "images": [], "options": [{"label": "A", "text": "Trần bì, phòng phong, cốt toái bổ"}, {"label": "B", "text": "Sinh khương, mạn kinh, đỗ trọng"}, {"label": "C", "text": "Quế chi, ma hoàng, tô diệp"}, {"label": "D", "text": "Ma hoàng, thăng ma, kinh giới"}], "correct": "C", "answer": "", "answerVi": "", "explanation": "", "source": "Bộ câu hỏi Y học cổ truyền", "topic": "YHCT", "isSupplement": false}, {"id": 5, "display": "5", "type": "mcq", "question": "Vị thuốc có tác dụng trị bệnh hen suyễn, tiểu tiện bí", "vi": "", "images": [], "options": [{"label": "A", "text": "Sinh khương"}, {"label": "B", "text": "Trần bì"}, {"label": "C", "text": "Ma hoàng"}, {"label": "D", "text": ""}], "correct": "C", "answer": "", "answerVi": "", "explanation": "", "source": "Bộ câu hỏi Y học cổ truyền", "topic": "YHCT", "isSupplement": false}, {"id": 6, "display": "6", "type": "mcq", "question": "Nêu nhóm thuốc trị chứng hàn nhiệt vãng lai", "vi": "", "images": [], "options": [{"label": "A", "text": "Tô diệp, bạch chỉ"}, {"label": "B", "text": "Thăng ma, cát căn"}, {"label": "C", "text": "Sài hồ, thanh cao"}, {"label": "D", "text": "Cúc hoa, sài hồ"}], "correct": "C", "answer": "", "answerVi": "", "explanation": "", "source": "Bộ câu hỏi Y học cổ truyền", "topic": "YHCT", "isSupplement": false}, {"id": 7, "display": "7", "type": "mcq", "question": "Chỉ ra triệu chứng có thể sử dụng thuốc thanh nhiệt giáng hỏa", "vi": "", "images": [], "options": [{"label": "A", "text": "Sốt cao, rét run, sợ lạnh"}, {"label": "B", "text": "Sốt cao, mồ hôi ra nhiều"}, {"label": "C", "text": "Sốt cao, mê sảng, phát cuồng"}, {"label": "D", "text": "Sốt cao, mặt tái, thích mặc ấm, thích uống nước nóng"}], "correct": "C", "answer": "", "answerVi": "", "explanation": "", "source": "Bộ câu hỏi Y học cổ truyền", "topic": "YHCT", "isSupplement": false}, {"id": 8, "display": "8", "type": "mcq", "question": "Chọn vị thuốc đồng thời có 2 tác dụng: bình suyễn và tăng huyết áp", "vi": "", "images": [], "options": [{"label": "A", "text": "Tang bạch bì"}, {"label": "B", "text": "Hạnh nhân"}, {"label": "C", "text": "Ma hoàng"}, {"label": "D", "text": "Bán hạ"}], "correct": "C", "answer": "", "answerVi": "", "explanation": "", "source": "Bộ câu hỏi Y học cổ truyền", "topic": "YHCT", "isSupplement": false}, {"id": 9, "display": "9", "type": "mcq", "question": "Thuốc lợi thấp là thuốc có công năng", "vi": "", "images": [], "options": [{"label": "A", "text": "Lợi thủy"}, {"label": "B", "text": "Nhuận tràng"}, {"label": "C", "text": "Hành khí"}, {"label": "D", "text": "Bổ thận"}], "correct": "A", "answer": "", "answerVi": "", "explanation": "", "source": "Bộ câu hỏi Y học cổ truyền", "topic": "YHCT", "isSupplement": false}, {"id": 10, "display": "10", "type": "mcq", "question": "Khi rối loạn kinh nguyệt do huyết hư, chọn nhóm thuốc chính để điều trị", "vi": "", "images": [], "options": [{"label": "A", "text": "Hành khí giải uất"}, {"label": "B", "text": "Hoạt huyết"}, {"label": "C", "text": "Bổ âm"}, {"label": "D", "text": "Bổ huyết"}], "correct": "D", "answer": "", "answerVi": "", "explanation": "", "source": "Bộ câu hỏi Y học cổ truyền", "topic": "YHCT", "isSupplement": false}, {"id": 11, "display": "11", "type": "mcq", "question": "Vị thuốc vừa có công năng giải biểu hàn, vừa có công năng giải biểu nhiệt", "vi": "", "images": [], "options": [{"label": "A", "text": "Ma hoàng"}, {"label": "B", "text": "Kinh giới"}, {"label": "C", "text": "Cúc hoa"}, {"label": "D", "text": "Sài hồ"}], "correct": "B", "answer": "", "answerVi": "", "explanation": "", "source": "Bộ câu hỏi Y học cổ truyền", "topic": "YHCT", "isSupplement": false}, {"id": 12, "display": "12", "type": "mcq", "question": "Nêu vị thuốc có công năng ôn trung chỉ phúc thống", "vi": "", "images": [], "options": [{"label": "A", "text": "Phòng phong"}, {"label": "B", "text": "Khương hoạt"}, {"label": "C", "text": "Can khương"}, {"label": "D", "text": "Độc hoạt"}], "correct": "C", "answer": "", "answerVi": "", "explanation": "", "source": "Bộ câu hỏi Y học cổ truyền", "topic": "YHCT", "isSupplement": false}, {"id": 13, "display": "13", "type": "mcq", "question": "Chọn vị thuốc được dùng để trị 4 chứng: đàm nhiệt, nôn, nấc và động thai", "vi": "", "images": [], "options": [{"label": "A", "text": "Trúc lịch"}, {"label": "B", "text": "Trúc nhự"}, {"label": "C", "text": "Cát cánh"}, {"label": "D", "text": "Lai phục tử"}], "correct": "B", "answer": "", "answerVi": "", "explanation": "", "source": "Bộ câu hỏi Y học cổ truyền", "topic": "YHCT", "isSupplement": false}, {"id": 14, "display": "14", "type": "mcq", "question": "Chọn vị thuốc có 2 tác dụng: an thần và nhuận tràng", "vi": "", "images": [], "options": [{"label": "A", "text": "Táo nhân"}, {"label": "B", "text": "Viễn chí"}, {"label": "C", "text": "Bá tử nhân"}, {"label": "D", "text": "Mạch môn"}], "correct": "C", "answer": "", "answerVi": "", "explanation": "", "source": "Bộ câu hỏi Y học cổ truyền", "topic": "YHCT", "isSupplement": false}, {"id": 15, "display": "15", "type": "mcq", "question": "Phụ nữ có thai mà bị cảm lạnh nên chọn vị thuốc nào để giải cảm", "vi": "", "images": [], "options": [{"label": "A", "text": "Tô diệp"}, {"label": "B", "text": "Sinh khương"}, {"label": "C", "text": "Cát căn"}, {"label": "D", "text": "Kinh giới"}], "correct": "A", "answer": "", "answerVi": "", "explanation": "", "source": "Bộ câu hỏi Y học cổ truyền", "topic": "YHCT", "isSupplement": false}, {"id": 16, "display": "16", "type": "mcq", "question": "Khi hôn mê, phát cuồng, kinh phong, thường dùng thuốc để trị vào tạng phủ", "vi": "", "images": [], "options": [{"label": "A", "text": "Can"}, {"label": "B", "text": "Thận"}, {"label": "C", "text": "Tâm"}, {"label": "D", "text": "Phế"}], "correct": "A", "answer": "", "answerVi": "", "explanation": "", "source": "Bộ câu hỏi Y học cổ truyền", "topic": "YHCT", "isSupplement": false}, {"id": 17, "display": "17", "type": "mcq", "question": "Chỉ ra vị thuốc có tính lương", "vi": "", "images": [], "options": [{"label": "A", "text": "Bạc hà"}, {"label": "B", "text": "Bạch linh"}, {"label": "C", "text": "Bạch chỉ"}, {"label": "D", "text": "Kinh giới"}], "correct": "A", "answer": "", "answerVi": "", "explanation": "", "source": "Bộ câu hỏi Y học cổ truyền", "topic": "YHCT", "isSupplement": false}, {"id": 18, "display": "18", "type": "mcq", "question": "Chỉ ra vị thuốc có tính nhiệt", "vi": "", "images": [], "options": [{"label": "A", "text": "Can khương"}, {"label": "B", "text": "Xuyên khung"}, {"label": "C", "text": "Đảng sâm"}, {"label": "D", "text": "Trần bì"}], "correct": "A", "answer": "", "answerVi": "", "explanation": "", "source": "Bộ câu hỏi Y học cổ truyền", "topic": "YHCT", "isSupplement": false}, {"id": 19, "display": "19", "type": "mcq", "question": "Chỉ ra cơ sở của sự quy kinh thuốc cổ truyền", "vi": "", "images": [], "options": [{"label": "A", "text": "Dựa vào kinh nghiệm thu thập được trong dân gian"}, {"label": "B", "text": "Dựa vào kết quả nghiên cứu khoa học"}, {"label": "C", "text": "Dựa vào lý luận y học cổ truyền"}, {"label": "D", "text": "Dựa vào lý luận y học cổ truyền và thực tiễn lâm sàng"}], "correct": "D", "answer": "", "answerVi": "", "explanation": "", "source": "Bộ câu hỏi Y học cổ truyền", "topic": "YHCT", "isSupplement": false}, {"id": 20, "display": "20", "type": "mcq", "question": "Chỉ ra nhóm thuốc tân lương giải biểu", "vi": "", "images": [], "options": [{"label": "A", "text": "Tế tân, cúc hoa, bạch chỉ"}, {"label": "B", "text": "Cát căn, tang diệp, sài hồ"}, {"label": "C", "text": "Bạch chỉ, thạch cao, tri mẫu"}, {"label": "D", "text": "Mạn kinh tử, uất kim, huyền sâm"}], "correct": "B", "answer": "", "answerVi": "", "explanation": "", "source": "Bộ câu hỏi Y học cổ truyền", "topic": "YHCT", "isSupplement": false}, {"id": 21, "display": "21", "type": "mcq", "question": "Chỉ ra vị thuốc có tác dụng thông kinh hoạt lạc", "vi": "", "images": [], "options": [{"label": "A", "text": "Kinh giới"}, {"label": "B", "text": "Quế chi"}, {"label": "C", "text": "Bạch chỉ"}, {"label": "D", "text": "Tô diệp"}], "correct": "B", "answer": "", "answerVi": "", "explanation": "", "source": "Bộ câu hỏi Y học cổ truyền", "topic": "YHCT", "isSupplement": false}, {"id": 22, "display": "22", "type": "mcq", "question": "Chỉ ra nhóm thuốc chỉ huyết", "vi": "", "images": [], "options": [{"label": "A", "text": "Kinh giới, khương hoạt"}, {"label": "B", "text": "Kinh giới than, thán khương"}, {"label": "C", "text": "Hương nhu, bạch chỉ"}, {"label": "D", "text": "Tô diệp, thăng ma"}], "correct": "B", "answer": "", "answerVi": "", "explanation": "", "source": "Bộ câu hỏi Y học cổ truyền", "topic": "YHCT", "isSupplement": false}, {"id": 23, "display": "23", "type": "mcq", "question": "Chọn vị thuốc có đủ 3 công năng: thanh phế chỉ ho, lợi tiểu, hạ huyết áp", "vi": "", "images": [], "options": [{"label": "A", "text": "Thiên môn"}, {"label": "B", "text": "Tiền hồ"}, {"label": "C", "text": "Tang bạch bì"}, {"label": "D", "text": "Trần bì"}], "correct": "C", "answer": "", "answerVi": "", "explanation": "", "source": "Bộ câu hỏi Y học cổ truyền", "topic": "YHCT", "isSupplement": false}, {"id": 24, "display": "24", "type": "mcq", "question": "Thuốc dưỡng tâm an thần được dùng để trị chứng bệnh", "vi": "", "images": [], "options": [{"label": "A", "text": "Hồi hộp, khó ngủ"}, {"label": "B", "text": "Chán ăn, mất ngủ"}, {"label": "C", "text": "Sốt cao, mất ngủ"}, {"label": "D", "text": "Đau lưng, mất ngủ"}], "correct": "A", "answer": "", "answerVi": "", "explanation": "", "source": "Bộ câu hỏi Y học cổ truyền", "topic": "YHCT", "isSupplement": false}, {"id": 25, "display": "25", "type": "mcq", "question": "Chọn nhóm thuốc không dùng cho phụ nữ có thai", "vi": "", "images": [], "options": [{"label": "A", "text": "Cẩu tích, hoài sơn, tục đoạn"}, {"label": "B", "text": "Đỗ trọng, cúc hoa, sa nhân"}, {"label": "C", "text": "Bạch truật, bạch linh, trần bì"}, {"label": "D", "text": "Phụ tử chế, quế chi, quế nhục"}], "correct": "D", "answer": "", "answerVi": "", "explanation": "", "source": "Bộ câu hỏi Y học cổ truyền", "topic": "YHCT", "isSupplement": false}, {"id": 26, "display": "26", "type": "mcq", "question": "Nêu nhóm bệnh, chứng có thể dùng thuốc thanh nhiệt lương huyết", "vi": "", "images": [], "options": [{"label": "A", "text": "Đau dạ dày, ruột thể hư hàn"}, {"label": "B", "text": "Chảy máu cam, trĩ nội do đại tràng thực nhiệt"}, {"label": "C", "text": "Cảm mạo phong hàn"}, {"label": "D", "text": "Phong thấp đau nhức, tê lạnh xương khớp"}], "correct": "B", "answer": "", "answerVi": "", "explanation": "", "source": "Bộ câu hỏi Y học cổ truyền", "topic": "YHCT", "isSupplement": false}, {"id": 27, "display": "27", "type": "mcq", "question": "Vị thuốc nào dưới đây có tác dụng phát hãn giải biểu hàn?", "vi": "", "images": [], "options": [{"label": "A", "text": "Bạc hà"}, {"label": "B", "text": "Ngũ vị tử"}, {"label": "C", "text": "Cúc hoa"}, {"label": "D", "text": "Sinh khương"}], "correct": "D", "answer": "", "answerVi": "", "explanation": "", "source": "Bộ câu hỏi Y học cổ truyền", "topic": "YHCT", "isSupplement": false}, {"id": 28, "display": "28", "type": "mcq", "question": "Chỉ ra nhóm thuốc nào sau đây là thuốc ôn trung", "vi": "", "images": [], "options": [{"label": "A", "text": "Đại hồi, bạch chỉ, đinh hương"}, {"label": "B", "text": "Thảo quả, tiểu hồi, ngô thù du"}, {"label": "C", "text": "Quế chi, ngô thù du, phụ tử chế"}, {"label": "D", "text": "Xuyên khung, phòng phong, thảo quả"}], "correct": "B", "answer": "", "answerVi": "", "explanation": "", "source": "Bộ câu hỏi Y học cổ truyền", "topic": "YHCT", "isSupplement": false}, {"id": 29, "display": "29", "type": "mcq", "question": "Chọn nhóm các vị thuốc có tính hàn, được dùng trị chứng đờm nhiệt, sốt cao phát cuồng", "vi": "", "images": [], "options": [{"label": "A", "text": "Bán hạ, thường sơn"}, {"label": "B", "text": "Cát cánh, ngưu hoàng"}, {"label": "C", "text": "Trúc lịch, bạch giới tử"}, {"label": "D", "text": "Trúc nhự, trúc lịch"}], "correct": "D", "answer": "", "answerVi": "", "explanation": "", "source": "Bộ câu hỏi Y học cổ truyền", "topic": "YHCT", "isSupplement": false}, {"id": 30, "display": "30", "type": "mcq", "question": "Không dùng cam thảo liều cao kéo dài trong trường hợp", "vi": "", "images": [], "options": [{"label": "A", "text": "Phù thũng"}, {"label": "B", "text": "Ho do lạnh"}, {"label": "C", "text": "Viêm họng, viêm amidan"}, {"label": "D", "text": "Viêm loét dạ dày"}], "correct": "A", "answer": "", "answerVi": "", "explanation": "", "source": "Bộ câu hỏi Y học cổ truyền", "topic": "YHCT", "isSupplement": false}, {"id": 31, "display": "31", "type": "mcq", "question": "Thuốc bổ dương dùng trong các trường hợp", "vi": "", "images": [], "options": [{"label": "A", "text": "Thận phế kém"}, {"label": "B", "text": "Tâm thận dương hư"}, {"label": "C", "text": "Phế hư"}, {"label": "D", "text": "Can thận hư"}], "correct": "B", "answer": "", "answerVi": "", "explanation": "", "source": "Bộ câu hỏi Y học cổ truyền", "topic": "YHCT", "isSupplement": false}]</script>
+<script>
+const QUESTIONS = JSON.parse(document.getElementById('question-data').textContent);
+const STORE_KEY = 'yhct_de_kiem_tra_28_cau_v1';
+const TOPICS = [...new Set(QUESTIONS.map(q => q.topic))].sort();
+const ALIAS = {
+  'dao duc':'đạo đức','ddkd':'đạo đức kinh doanh','phap luat':'pháp luật',
+  'vi loi':'vị lợi','dao ly':'đạo lý','cong ly':'công lý xã hội',
+  'van hoa':'văn hóa','doanh nhan':'doanh nhân','trach nhiem xa hoi':'trách nhiệm xã hội',
+  'quyen rieng tu':'quyền riêng tư','an toan lao dong':'an toàn lao động',
+  'tiep thi':'tiếp thị','marketing':'tiếp thị','quang cao':'quảng cáo'
+};
+let includeStarredForMenu = false;
+let state = {
+  index: 0,
+  filter: 'all',
+  topic: 'all',
+  search: '',
+  showSource: false,
+  showAllCorrect: false,
+  compactShort: false,
+  noteMode: false,
+  progress: loadProgress(),
+  exam: null,
+  directQuestionId: null,
+  directStarView: false
+};
+let timer = null;
+function loadProgress(){try{return JSON.parse(localStorage.getItem(STORE_KEY)||'{}')}catch(e){return {}}}
+function saveProgress(){localStorage.setItem(STORE_KEY, JSON.stringify(state.progress));}
+function byId(id){return document.getElementById(id)}
+function esc(s=''){return String(s).replace(/[&<>"']/g, m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[m]));}
+function fmt(s=''){return esc(s).replace(/\n/g,'<br>');}
+function stripVN(s=''){return String(s).normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase();}
+function termSearch(){let t=state.search.trim().toLowerCase(); for(const [k,v] of Object.entries(ALIAS)){if(t.includes(k)) t+=' '+v;} return stripVN(t);}
+function pOf(q){return state.progress[q.id] || {};}
+function setP(q, patch){state.progress[q.id] = {...pOf(q), ...patch}; saveProgress();}
+function hasImg(q){return Array.isArray(q.images) && q.images.length>0;}
+function isDoneStatus(p){return p.status==='correct'||p.status==='wrong'||p.status==='learned'||p.status==='unlearned'}
+function baseList(ignoreExam=false){
+  const term = termSearch();
+  let arr = QUESTIONS.filter(q => {
+    const p=pOf(q);
+    // Luật sao: ngoài bộ lọc 'Câu đã gắn sao', luôn ẩn câu đã sao.
+    if(!includeStarredForMenu && state.filter!=='starred' && p.star) return false;
+    if(state.filter==='mcq' && q.type!=='mcq') return false;
+    if(state.filter==='short') return false;
+    if(state.filter==='image' && !hasImg(q)) return false;
+    if(state.filter==='wrong' && p.status!=='wrong' && p.status!=='unlearned') return false;
+    if(state.filter==='starred' && !p.star) return false;
+    if(state.filter==='learned' && p.status!=='learned' && !(q.type==='mcq' && p.status==='correct')) return false;
+    if(state.filter==='unlearned') return false;
+    if(state.filter==='supplement' && !q.isSupplement) return false;
+    if(state.topic!=='all' && q.topic!==state.topic) return false;
+    if(term){
+      const pack = stripVN([q.id,q.display,q.topic,q.question,q.vi,q.answer,q.answerVi,q.explanation,q.source,...(q.options||[]).map(o=>o.text)].join(' '));
+      if(!pack.includes(term)) return false;
+    }
+    return true;
+  });
+  if(!ignoreExam && state.exam?.active){const ids=new Set(state.exam.ids); arr=arr.filter(q=>ids.has(q.id));}
+  return arr;
+}
+function list(){return baseList(false)}
+function menuList(){includeStarredForMenu=true; const arr=baseList(false); includeStarredForMenu=false; return arr;}
+function clearDirectView(){state.directQuestionId=null; state.directStarView=false;}
+function current(){
+  if(state.directQuestionId!=null){
+    const direct=QUESTIONS.find(q=>String(q.id)===String(state.directQuestionId));
+    if(direct) return direct;
+    state.directQuestionId=null;
+  }
+  const arr=list(); if(state.index>=arr.length) state.index=Math.max(0, arr.length-1); return arr[state.index];
+}
+function setIndexNearQuestion(q){
+  const arr=list();
+  const same=arr.findIndex(x=>x.id===q.id);
+  if(same>=0){state.index=same; return;}
+  const allIndex=QUESTIONS.findIndex(x=>x.id===q.id);
+  const next=arr.findIndex(x=>QUESTIONS.findIndex(y=>y.id===x.id)>allIndex);
+  state.index=next>=0?next:0;
+}
+function goMenuQuestion(q){
+  if(!q) return;
+  clearDirectView();
+  setIndexNearQuestion(q);
+  if(state.filter!=='starred' && pOf(q).star){
+    state.directQuestionId=q.id;
+    state.directStarView=true;
+  }
+  renderAll();
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+function renderAll(){renderTopics(); renderExamButtons(); renderStats(); renderGrid(); renderExamStatus(); renderAnswerToggle(); renderCard();}
+function renderAnswerToggle(){
+  const btn=byId('toggleAllCorrect');
+  if(!btn) return;
+  btn.textContent=state.showAllCorrect?'Tắt đáp án đúng':'Bật đáp án đúng';
+  btn.classList.toggle('on', !!state.showAllCorrect);
+  btn.title=state.showAllCorrect?'Tắt hiện đáp án đúng trong menu':'Hiện đáp án đúng màu xanh lá ngay trong menu câu hỏi';
+}
+function renderTopics(){
+  const old = byId('topic').value || state.topic;
+  byId('topic').innerHTML = '<option value="all">Tất cả chủ đề</option>' + TOPICS.map(t=>`<option value="${esc(t)}">${esc(t)} (${QUESTIONS.filter(q=>q.topic===t).length})</option>`).join('');
+  byId('topic').value = old;
+}
+function renderStats(){
+  const vals=Object.values(state.progress);
+  const done=QUESTIONS.filter(q=>isDoneStatus(pOf(q))).length;
+  const good=QUESTIONS.filter(q=>['correct','learned'].includes(pOf(q).status)).length;
+  const shortLearned=QUESTIONS.filter(q=>q.type==='short' && pOf(q).status==='learned').length;
+  byId('score').textContent=good;
+  byId('answered').textContent=`${done}/${QUESTIONS.length}`;
+  byId('percent').textContent=done?Math.round(good*100/done)+'%':'0%';
+  byId('bar').style.width=Math.round(done*100/QUESTIONS.length)+'%';
+  const q=current(); byId('currentNum').textContent=q?(q.isSupplement?'BS '+(q.id-98):q.display):'-';
+  byId('imageChip').textContent='Có hình: '+QUESTIONS.filter(hasImg).length;
+  byId('shortChip').textContent='100% trắc nghiệm';
+  byId('learnedSmall').textContent='Bộ 31 câu trắc nghiệm';
+}
+function renderExamButtons(){
+  byId('examBtns').innerHTML = [1,2,3,4,5,6,7,8].map(m=>`<button class="mini warn" data-min="${m}">${m} phút</button>`).join('') + (state.exam?.active?'<button class="mini active" id="submitExam">Nộp bài</button>':'');
+  document.querySelectorAll('[data-min]').forEach(b=>b.onclick=()=>startExam(Number(b.dataset.min)));
+  const submit=byId('submitExam'); if(submit) submit.onclick=finishExam;
+}
+function renderGrid(){
+  const arr=menuList();
+  const cur=current();
+  const revealMode=!!state.showAllCorrect && !state.exam?.active;
+  byId('qgrid').innerHTML = arr.map((q,i)=>{
+    const p=pOf(q);
+    const autoGood=revealMode && q.type==='mcq';
+    const cls=['qbtn', autoGood?'showAns':'', (cur && q.id===cur.id)?'active':'', (['correct','learned'].includes(p.status)||autoGood)?'good':'', (!autoGood && ['wrong','unlearned'].includes(p.status))?'bad':'', p.star?'star':'', q.type==='short'?'shortmark':''].join(' ');
+    const ttl=(q.type==='short'?'TLN':'TN') + ' câu ' + q.display + (autoGood ? ' · đáp án đúng: ' + q.correct : '');
+    const inner = autoGood ? `<span>${esc(q.display)}</span><b>${esc(q.correct)}</b>` : esc(q.display);
+    return `<button class="${cls}" data-go="${i}" title="${esc(ttl)}">${inner}</button>`;
+  }).join('');
+  document.querySelectorAll('[data-go]').forEach(b=>b.onclick=()=>goMenuQuestion(arr[Number(b.dataset.go)]));
+}
+function renderExamStatus(){
+  const el=byId('examStatus'); const chip=byId('timerChip');
+  if(state.exam?.active){
+    const total=state.exam.ids.length;
+    const picked=state.exam.ids.filter(id=>state.progress[id]?.selected).length;
+    el.innerHTML=`<div class="examBox"><b>Mini exam đang chạy</b><div>${picked}/${total} câu đã chọn · Chỉ hiện đúng/sai sau khi nộp hoặc hết giờ.</div></div>`;
+    chip.style.display='inline-flex'; updateTimer();
+  } else if(state.exam?.finished){
+    chip.style.display='none';
+    const ids=state.exam.ids;
+    const total=ids.length;
+    const good=ids.filter(id=>state.progress[id]?.status==='correct').length;
+    const wrongIds=ids.filter(id=>state.progress[id]?.status==='wrong');
+    const retryHtml = wrongIds.length
+      ? `<button class="mini warn" id="retryExamWrong" style="margin-top:10px">↻ Làm lại ${wrongIds.length} câu sai</button>`
+      : `<div style="margin-top:8px">Full đúng rồi, không còn câu sai để làm lại.</div>`;
+    el.innerHTML=`<div class="examBox"><b>Kết quả mini exam: ${good}/${total}</b><div>Đúng ${good}/${total} câu · Sai ${wrongIds.length} câu.</div>${retryHtml}</div>`;
+    const retry=byId('retryExamWrong'); if(retry) retry.onclick=retryExamWrong;
+  } else {el.innerHTML=''; chip.style.display='none';}
+}
+function renderImages(q){
+  if(!hasImg(q)) return '';
+  return `<div class="imageNote">Câu này có hình nguồn. Bấm ảnh để phóng to.</div><div class="media">${q.images.map((src,i)=>`<img src="${src}" alt="Hình câu ${esc(q.display)}.${i+1}" data-zoom="${i}">`).join('')}</div>`;
+}
+function noteData(q){
+  const p=pOf(q);
+  return p.notes || {question:[], vi:[], options:{}, memo:''};
+}
+function normalizeNotes(n){
+  const rawOptions = (n && typeof n.options==='object' && !Array.isArray(n.options)) ? n.options : ((n && typeof n.opts==='object' && !Array.isArray(n.opts)) ? n.opts : {});
+  const options = {};
+  for(const [label, arr] of Object.entries(rawOptions || {})){
+    options[label] = Array.isArray(arr) ? arr : [];
+  }
+  return {
+    question:Array.isArray(n?.question)?n.question:[],
+    vi:Array.isArray(n?.vi)?n.vi:[],
+    options,
+    memo:n?.memo||''
+  };
+}
+function highlightClass(color){return ['yellow','green','blue','red','purple'].includes(color)?'hl-'+color:'hl-yellow';}
+function fmtAnnotated(text='', anns=[]){
+  text=String(text||'');
+  const clean=[...(anns||[])].filter(a=>Number.isFinite(a.start)&&Number.isFinite(a.end)&&a.end>a.start).sort((a,b)=>a.start-b.start||a.end-b.end);
+  let pos=0, out='';
+  for(const a of clean){
+    const s=Math.max(0, Math.min(text.length, a.start));
+    const e=Math.max(0, Math.min(text.length, a.end));
+    if(e<=s || s<pos) continue;
+    out += fmt(text.slice(pos,s));
+    out += `<span class="${highlightClass(a.color)}">${fmt(text.slice(s,e))}</span>`;
+    pos=e;
+  }
+  out += fmt(text.slice(pos));
+  return out;
+}
+function renderQuestionText(q){
+  const n=normalizeNotes(noteData(q));
+  const hasMemo=String(n.memo||'').trim().length>0;
+  const tools = state.noteMode ? `<div class="noteToolbar">
+    <span class="hint">Bôi đen chữ trong câu hỏi/dịch/4 đáp án rồi bấm màu:</span>
+    <button class="hlBtn yellow" data-hl="yellow">Vàng</button>
+    <button class="hlBtn green" data-hl="green">Xanh lá</button>
+    <button class="hlBtn blue" data-hl="blue">Xanh dương</button>
+    <button class="hlBtn red" data-hl="red">Đỏ</button>
+    <button class="hlBtn purple" data-hl="purple">Tím</button>
+    <button class="hlClear" id="noteClearBtn">Xóa màu câu này</button>
+    <div class="noteMemoLabel">Ghi chú riêng cho câu này:</div>
+    <textarea id="noteMemo" class="noteMemo" placeholder="VD: keyword cần nhớ, công thức, bẫy đáp án...">${esc(n.memo||'')}</textarea>
+  </div>` : (hasMemo ? `<div class="memoBox"><b>Note:</b> ${fmt(n.memo)}</div>` : '');
+  return `<div class="qTitleRow"><div class="qtext noteField" data-field="question">${fmtAnnotated(q.question,n.question)}</div><button class="noteEditBtn ${state.noteMode?'on':''}" id="noteToggleBtn">${state.noteMode?'Đóng note':'🖍 Sửa/tô keyword'}</button></div><div class="vi noteField" data-field="vi">${fmtAnnotated(q.vi,n.vi)}</div>${tools}`;
+}
+function closestNoteField(node){
+  while(node && node!==document){
+    if(node.classList && node.classList.contains('noteField')) return node;
+    node=node.parentNode;
+  }
+  return null;
+}
+function textOffset(root, node, offset){
+  const walker=document.createTreeWalker(root, NodeFilter.SHOW_TEXT, null);
+  let count=0, cur;
+  while((cur=walker.nextNode())){
+    if(cur===node) return count + offset;
+    count += cur.nodeValue.length;
+  }
+  return count;
+}
+function addHighlight(q,color){
+  const sel=window.getSelection();
+  if(!sel || sel.rangeCount===0 || sel.isCollapsed){alert('Bôi đen keyword trong câu hỏi, dòng dịch hoặc đáp án trước rồi bấm màu nha.'); return;}
+  const range=sel.getRangeAt(0);
+  const root=closestNoteField(range.commonAncestorContainer);
+  if(!root){alert('Chỉ tô được chữ trong câu hỏi, dòng dịch hoặc đáp án.'); return;}
+  const field=root.dataset.field;
+  const start=textOffset(root, range.startContainer, range.startOffset);
+  const end=textOffset(root, range.endContainer, range.endOffset);
+  if(end<=start){alert('Chọn đoạn chữ từ trái qua phải rồi bấm màu nha.'); return;}
+  const n=normalizeNotes(noteData(q));
+  if(field==='option'){
+    const label=root.dataset.optionLabel || root.dataset.opt || '';
+    if(!n.options || typeof n.options!=='object' || Array.isArray(n.options)) n.options={};
+    if(!Array.isArray(n.options[label])) n.options[label]=[];
+    n.options[label].push({start,end,color});
+  } else {
+    if(!Array.isArray(n[field])) n[field]=[];
+    n[field].push({start,end,color});
+  }
+  setP(q,{notes:n});
+  sel.removeAllRanges();
+  state.noteMode=true;
+  renderAll();
+}
+function bindNoteTools(q){
+  const toggle=byId('noteToggleBtn');
+  if(toggle) toggle.onclick=()=>{state.noteMode=!state.noteMode; renderAll();};
+  document.querySelectorAll('[data-hl]').forEach(b=>b.onclick=()=>addHighlight(q,b.dataset.hl));
+  const clear=byId('noteClearBtn');
+  if(clear) clear.onclick=()=>{const n=normalizeNotes(noteData(q)); n.question=[]; n.vi=[]; n.options={}; setP(q,{notes:n}); state.noteMode=true; renderAll();};
+  const memo=byId('noteMemo');
+  if(memo) memo.oninput=()=>{const n=normalizeNotes(noteData(q)); n.memo=memo.value; setP(q,{notes:n});};
+}
+function renderAnswerMap(){
+  // Không hiện bảng đáp án to ở giữa nữa; chỉ hiện đáp án trong menu và trong câu đang mở.
+  return '';
+}
+function optionText(q,o,p,inExam){
+  let cls='option';
+  const revealCorrect=!!state.showAllCorrect && !inExam && q.type==='mcq';
+  if(p.selected===o.label) cls+=' selected';
+  if(revealCorrect && o.label===q.correct) cls+=' correct';
+  if(!inExam && p.selected){ if(o.label===q.correct) cls+=' correct'; else if(p.selected===o.label) cls+=' wrong'; }
+  const n=normalizeNotes(noteData(q));
+  const optAnns = (n.options && Array.isArray(n.options[o.label])) ? n.options[o.label] : [];
+  return `<button type="button" class="${cls}" data-opt="${esc(o.label)}"><span>${esc(o.label)}</span><b class="noteField optionNoteField" data-field="option" data-option-label="${esc(o.label)}">${fmtAnnotated(o.text,optAnns)}</b></button>`;
+}
+function renderCard(){
+  const q=current(); const box=byId('quizCard');
+  if(!q){box.innerHTML='<div class="empty">Không có câu nào trong bộ lọc này. Đổi lọc hoặc xóa ô tìm kiếm nha.</div>'; return;}
+  const arr=list(); const p=pOf(q); const inExam=!!state.exam?.active;
+  const pos=arr.findIndex(x=>x.id===q.id);
+  const posText=pos>=0 ? `${pos+1}` : 'xem từ menu';
+  let html=`<div class="head"><div><div class="qid">Câu ${esc(q.display)} / ${QUESTIONS.length}</div><div class="muted">${posText} trong bộ lọc hiện tại (${arr.length} câu)</div></div><div class="badges"><span class="tag ${q.type==='short'?'shorttag':''}">${esc(q.type==='mcq'?'Trắc nghiệm':'TLN / tự luận ngắn')}</span><span class="tag">${esc(q.topic)}</span>${q.isSupplement?'<span class="tag supp">Bổ sung</span>':''}</div></div>`;
+  html += renderQuestionText(q) + renderImages(q);
+  if(q.type==='mcq'){
+    html += '<div class="options">' + q.options.map(o=>optionText(q,o,p,inExam)).join('') + '</div>';
+    if(p.selected && !inExam){
+      const ok=p.selected===q.correct;
+      html += `<div class="feedback ${ok?'good':'bad'}"><b>${ok?'Đúng rồi':'Sai rồi'} · Đáp án đúng: ${esc(q.correct)}</b><div class="explain"><b>GT:</b> ${fmt(q.explanation)}</div>${state.showSource?`<div class="source">Nguồn: ${fmt(q.source)}</div>`:''}</div>`;
+    } else if(state.showAllCorrect && !inExam){
+      html += `<div class="feedback good"><b>Đáp án đúng: ${esc(q.correct)}</b><div class="explain"><b>GT:</b> ${fmt(q.explanation)}</div>${state.showSource?`<div class="source">Nguồn: ${fmt(q.source)}</div>`:''}</div>`;
+    } else if(inExam){
+      html += `<div class="feedback neutral"><b>Đang ở mini exam</b><div>Chọn đáp án xong qua câu tiếp. Web chưa hiện đúng/sai cho tới khi nộp.</div></div>`;
+    }
+  } else {
+    html += `<div class="answerBox ${state.compactShort?'compact':''}"><div class="label">Đáp án mẫu để học thuộc</div><div class="answerMain">${fmt(q.answer)}</div><div class="answerVi">${fmt(q.answerVi)}</div><div class="explain"><b>GT:</b> ${fmt(q.explanation)}</div>${state.showSource?`<div class="source">Nguồn: ${fmt(q.source)}</div>`:''}</div>`;
+  }
+  html += `<div class="actions"><div><button class="ghost" id="prevBtn">← Câu trước</button><button class="ghost" id="nextBtn">Câu sau →</button><button class="ghost" id="redoBtn">↻ Làm lại câu</button><button class="starbtn" id="starBtn">${p.star?'★ Bỏ sao':'☆ Gắn sao'}</button></div><div>${q.type==='short'?'<button class="success" id="knownBtn">Đã thuộc</button><button class="danger" id="notKnownBtn">Chưa thuộc</button>':''}</div></div>`;
+  box.innerHTML=html;
+  box.classList.toggle('noteMode', !!state.noteMode);
+  bindNoteTools(q);
+  document.querySelectorAll('[data-answer-go]').forEach(b=>b.onclick=()=>{const target=QUESTIONS.find(x=>String(x.id)===String(b.dataset.answerGo)); if(target) goMenuQuestion(target);});
+  document.querySelectorAll('[data-opt]').forEach(b=>b.onclick=()=>answerMCQ(q,b.dataset.opt));
+  document.querySelectorAll('[data-zoom]').forEach((img,idx)=>img.onclick=()=>openZoom(q.images[idx]));
+  byId('prevBtn').onclick=prevQ; byId('nextBtn').onclick=nextQ;
+  byId('redoBtn').onclick=resetCurrentQuestion;
+  byId('starBtn').onclick=()=>{
+    const wasStar = !!pOf(q).star;
+    setP(q,{star:!wasStar});
+    clearDirectView();
+    if(wasStar) setIndexNearQuestion(q);
+    // Ngoài bộ lọc 'Câu đã gắn sao', câu vừa gắn sao sẽ tự ẩn khỏi danh sách.
+    renderAll();
+  };
+  const known=byId('knownBtn'); if(known) known.onclick=()=>{setP(q,{status:'learned'}); nextQ();};
+  const notKnown=byId('notKnownBtn'); if(notKnown) notKnown.onclick=()=>{setP(q,{status:'unlearned'}); renderAll();};
+}
+function advanceExamAfterAnswer(q){
+  const arr=list();
+  const cur=arr.findIndex(x=>x.id===q.id);
+  if(cur>=0){
+    let next=-1;
+    for(let i=cur+1;i<arr.length;i++){
+      if(!state.progress[arr[i].id]?.selected){next=i; break;}
+    }
+    if(next<0){
+      for(let i=0;i<arr.length;i++){
+        if(!state.progress[arr[i].id]?.selected){next=i; break;}
+      }
+    }
+    if(next>=0 && arr[next].id!==q.id){
+      state.index=next;
+    } else if(cur+1<arr.length){
+      state.index=cur+1;
+    }
+  }
+  clearDirectView();
+}
+function answerMCQ(q,label){
+  if(state.noteMode) return;
+  if(state.exam?.active){
+    setP(q,{selected:label});
+    advanceExamAfterAnswer(q);
+    renderAll();
+    return;
+  }
+  else {setP(q,{selected:label,status:label===q.correct?'correct':'wrong'});}
+  renderAll();
+}
+function resetCurrentQuestion(){
+  const q=current(); if(!q) return;
+  const old=pOf(q);
+  const keep={};
+  if(old.star) keep.star=true;
+  if(old.notes) keep.notes=old.notes;
+  state.progress[q.id]=keep;
+  saveProgress();
+  renderAll();
+}
+function starNavAllowed(){return state.filter==='starred';}
+function isNavTarget(q){return starNavAllowed() || !pOf(q).star;}
+function moveQ(dir, fromId=null){
+  const arr=list(); if(!arr.length) return;
+  const curId=fromId ?? current()?.id;
+  let start=curId!=null ? arr.findIndex(q=>q.id===curId) : state.index;
+  if(start<0) start=state.index;
+  for(let step=1; step<=arr.length; step++){
+    const idx=(start + dir*step + arr.length) % arr.length;
+    if(isNavTarget(arr[idx])){state.index=idx; renderAll(); return;}
+  }
+  renderAll();
+}
+function nextQ(){const from=current()?.id; clearDirectView(); moveQ(1, from);}
+function prevQ(){const from=current()?.id; clearDirectView(); moveQ(-1, from);}
+function shuffleCurrent(){
+  const arr=list(); if(!arr.length) return;
+  clearDirectView();
+  let pool=arr.map((q,i)=>({q,i})).filter(x=>isNavTarget(x.q));
+  if(!pool.length) pool=arr.map((q,i)=>({q,i}));
+  const pick=pool[Math.floor(Math.random()*pool.length)];
+  state.index=pick.i; renderAll();
+}
+function startExam(mins){
+  let pool=baseList(true).filter(q=>q.type==='mcq' && !pOf(q).star);
+  if(!pool.length) pool=QUESTIONS.filter(q=>q.type==='mcq' && !pOf(q).star);
+  if(!pool.length) pool=QUESTIONS.filter(q=>q.type==='mcq');
+  pool=[...pool].sort(()=>Math.random()-0.5);
+  const take=Math.min(20,pool.length);
+  const ids=pool.slice(0,take).map(q=>q.id);
+  ids.forEach(id=>{state.progress[id]={...(state.progress[id]||{}), selected:null, status:null};});
+  state.exam={active:true, finished:false, ids, end:Date.now()+mins*60*1000, mins};
+  state.filter='mcq'; state.topic='all'; state.search=''; state.index=0; clearDirectView();
+  byId('filter').value='mcq'; byId('topic').value='all'; byId('search').value='';
+  saveProgress(); startTimer(); renderAll();
+}
+function finishExam(){
+  if(!state.exam?.active) return;
+  for(const id of state.exam.ids){
+    const q=QUESTIONS.find(x=>x.id===id); const selected=state.progress[id]?.selected;
+    state.progress[id]={...(state.progress[id]||{}), status:selected===q.correct?'correct':'wrong'};
+  }
+  state.exam.active=false; state.exam.finished=true; saveProgress(); stopTimer(); renderAll();
+}
+function retryExamWrong(){
+  if(!state.exam?.finished) return;
+  const ids=state.exam.ids.filter(id=>state.progress[id]?.status==='wrong');
+  if(!ids.length) return;
+  ids.forEach(id=>{state.progress[id]={...(state.progress[id]||{}), selected:null, status:null};});
+  const mins=Math.max(1, state.exam.mins || 5);
+  state.exam={active:true, finished:false, ids, end:Date.now()+mins*60*1000, mins, retryWrong:true};
+  state.filter='mcq'; state.topic='all'; state.search=''; state.index=0; clearDirectView();
+  byId('filter').value='mcq'; byId('topic').value='all'; byId('search').value='';
+  saveProgress(); startTimer(); renderAll();
+}
+function startTimer(){stopTimer(); timer=setInterval(()=>{if(state.exam?.active && Date.now()>=state.exam.end){finishExam();} else updateTimer();},500);}
+function stopTimer(){if(timer){clearInterval(timer); timer=null;}}
+function updateTimer(){
+  const chip=byId('timerChip'); if(!state.exam?.active){chip.style.display='none'; return;}
+  let sec=Math.max(0, Math.ceil((state.exam.end-Date.now())/1000));
+  const m=String(Math.floor(sec/60)).padStart(2,'0'); const s=String(sec%60).padStart(2,'0');
+  chip.textContent=`⏱ ${m}:${s}`;
+}
+function openZoom(src){byId('zoomImg').src=src; byId('imgModal').classList.add('show');}
+function closeZoom(){byId('imgModal').classList.remove('show'); byId('zoomImg').src='';}
+function printableHTML(items){
+  return `<!doctype html><html><head><meta charset="utf-8"><title>31 câu kiểm tra Y học cổ truyền</title><style>body{font-family:Arial,sans-serif;line-height:1.45;padding:24px}.q{page-break-inside:avoid;border-bottom:1px solid #ddd;padding:16px 0}.en{font-weight:700}.opt{margin:4px 0}.correct{font-weight:700;background:#fff2a8}.ex{color:#075985}</style></head><body><h1>31 câu kiểm tra Y học cổ truyền</h1>${items.map(q=>`<div class="q"><div class="en">Câu ${esc(q.display)}. ${esc(q.question)}</div>${q.options.map(o=>`<div class="opt ${o.label===q.correct?'correct':''}">${o.label}. ${esc(o.text)}</div>`).join('')}<div class="ex"><b>GT:</b> ${esc(q.explanation)}</div></div>`).join('')}</body></html>`;
+}
+function exportPDF(){
+  const items=list().length?list():QUESTIONS;
+  const w=window.open('', '_blank');
+  if(!w){alert('Trình duyệt chặn popup. Cho phép popup rồi bấm lại.'); return;}
+  w.document.open(); w.document.write(printableHTML(items)); w.document.close();
+  setTimeout(()=>{w.focus(); w.print();},500);
+}
+function exportWord(){
+  const items=list().length?list():QUESTIONS;
+  const blob=new Blob(['\ufeff', printableHTML(items)], {type:'application/msword'});
+  const a=document.createElement('a'); a.href=URL.createObjectURL(blob); a.download='300_cau_trac_nghiem_dao_duc.doc'; document.body.appendChild(a); a.click(); a.remove(); URL.revokeObjectURL(a.href);
+}
+function resetProgress(){
+  const kept = {};
+  for (const [id, p] of Object.entries(state.progress || {})) {
+    const keep = {};
+    if (p && p.star) keep.star = true;
+    if (p && p.notes) keep.notes = p.notes;
+    if (Object.keys(keep).length) kept[id] = keep;
+  }
+  state.progress = kept;
+  state.exam = null;
+  clearDirectView();
+  stopTimer();
+  saveProgress();
+  renderAll();
+}
+function clearStarredQuestions(){
+  for (const [id, p] of Object.entries(state.progress || {})) {
+    if (p && p.star) {
+      const next = {...p};
+      delete next.star;
+      if (Object.keys(next).length) state.progress[id] = next;
+      else delete state.progress[id];
+    }
+  }
+  if (state.filter === 'starred') {
+    state.filter = 'all';
+    const filterEl = byId('filter');
+    if (filterEl) filterEl.value = 'all';
+  }
+  state.index = Math.max(0, state.index || 0);
+  clearDirectView();
+  saveProgress();
+  renderAll();
+}
+
+byId('filter').onchange=e=>{state.filter=e.target.value; state.index=0; clearDirectView(); renderAll();};
+byId('topic').onchange=e=>{state.topic=e.target.value; state.index=0; clearDirectView(); renderAll();};
+byId('search').oninput=e=>{state.search=e.target.value; state.index=0; clearDirectView(); renderAll();};
+byId('wrongQuick').onclick=()=>{state.filter='wrong'; byId('filter').value='wrong'; state.index=0; clearDirectView(); renderAll();};
+byId('starQuick').onclick=()=>{state.filter='starred'; byId('filter').value='starred'; state.index=0; clearDirectView(); renderAll();};
+byId('imgQuick').onclick=()=>{state.filter='image'; byId('filter').value='image'; state.index=0; clearDirectView(); renderAll();};
+if(byId('shortQuick')) byId('shortQuick').onclick=()=>{state.filter='short'; byId('filter').value='short'; state.index=0; clearDirectView(); renderAll();};
+if(byId('unlearnedQuick')) byId('unlearnedQuick').onclick=()=>{state.filter='unlearned'; byId('filter').value='unlearned'; state.index=0; clearDirectView(); renderAll();};
+if(byId('toggleSource')) byId('toggleSource').onclick=()=>{state.showSource=!state.showSource; renderAll();};
+byId('toggleAllCorrect').onclick=()=>{
+  if(state.exam?.active){alert('Đang mini exam nên không bật bảng đáp án đúng được. Nộp bài hoặc thoát exam trước nha.'); return;}
+  state.showAllCorrect=!state.showAllCorrect;
+  renderAll();
+};
+if(byId('compactShort')) byId('compactShort').onclick=()=>{state.compactShort=!state.compactShort; byId('compactShort').textContent=state.compactShort?'Mở rộng TLN':'Gọn TLN'; renderAll();};
+byId('shuffleBtn').onclick=shuffleCurrent;
+byId('exportPdfBtn').onclick=exportPDF;
+byId('exportWordBtn').onclick=exportWord;
+byId('resetBtn').onclick=resetProgress;
+byId('clearStarsBtn').onclick=clearStarredQuestions;
+window.addEventListener('keydown',e=>{
+  if(['INPUT','SELECT','TEXTAREA'].includes(document.activeElement.tagName)) return;
+  if(['a','b','c','d'].includes(e.key.toLowerCase())){const q=current(); if(q?.type==='mcq') answerMCQ(q,e.key.toUpperCase());}
+  if(e.key==='ArrowRight') nextQ(); if(e.key==='ArrowLeft') prevQ(); if(e.key==='Escape') closeZoom();
+});
+byId('imgModal').onclick=e=>{if(e.target.id==='imgModal') closeZoom();};
+if(state.exam?.active) startTimer();
+renderAll();
+</script>
+
+
+
+</body><savior-host style="all: unset; position: absolute; top: 0; left: 0; z-index: 99999999999999; display: block !important; overflow: unset"></savior-host></html>
